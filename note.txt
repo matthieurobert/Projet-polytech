@@ -1,0 +1,2 @@
+Pour compiler le programme: go build -o main
+Pour lancer le programme: ./main
