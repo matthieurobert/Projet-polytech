@@ -63,13 +63,3 @@ func subMat(mat [][]int, p int) [][]int {
 	return out
 }
 
-// func main() {
-// 	m3 := [][]int{
-// 		{1, 3, 1, 2, 5},
-// 		{5, 8, 5, 3, 6},
-// 		{0, 4, 0, 0, 7},
-// 		{2, 3, 2, 8, 9},
-// 		{4, 7, 9, 8, 4},
-// 	}
-// 	fmt.Println(Determinant(m3))
-// }
