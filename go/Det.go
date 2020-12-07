@@ -21,7 +21,8 @@ func (s *stack) ToSlice() []int {
 	return *s
 }
 
-func Determinant(mat [][]int) int { //fonction récursive calculant le déterminant
+//fonction récursive calculant le déterminant
+func Determinant(mat [][]int) int {
 
 	if len(mat) != len(mat[0]) {
 		return 0
@@ -62,4 +63,3 @@ func subMat(mat [][]int, p int) [][]int {
 	}
 	return out
 }
-

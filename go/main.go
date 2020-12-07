@@ -9,11 +9,7 @@ import (
 
 var wg sync.WaitGroup
 
-func carre(m [][]int, n int) {
-	defer wg.Done()
-
-	start := time.Now()
-
+func carre(m [][]int, n int) [][]int {
 	var tmp int
 
 	res := make([][]int, n)
@@ -34,11 +30,18 @@ func carre(m [][]int, n int) {
 		}
 	}
 
-	finish := time.Since(start)
-	// log.Printf("Mettre la matrice au carre a pris %s", finish)
+	return res
+}
 
-	fmt.Println("La matrice au carre est:", res)
-	fmt.Println("Le temps d'execution de la fonction est :", finish)
+func carreDuCarre(m [][]int, n int) {
+	defer wg.Done()
+	start := time.Now()
+
+	r := carre(carre(m, n), n)
+
+	finish := time.Since(start)
+	fmt.Println("Le matrice à la puissance 4 est :", r)
+	fmt.Println("Le temps d'execution de la fonction carreDuCarre est :", finish)
 }
 
 func displayDet(mat [][]int) {
@@ -49,7 +52,7 @@ func displayDet(mat [][]int) {
 
 	finish := time.Since(start)
 	fmt.Println("Le déterminant est :", r)
-	fmt.Println("Le temps d'execution de la fonction est :", finish)
+	fmt.Println("Le temps d'execution de la fonction Determinant est :", finish)
 }
 
 func main() {
@@ -74,7 +77,7 @@ func main() {
 	go displayDet(m1)
 
 	wg.Add(1)
-	go carre(m1, n)
+	go carreDuCarre(m1, n)
 
 	wg.Wait()
 	finish := time.Since(start)

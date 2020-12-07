@@ -23,14 +23,14 @@ fn carre(m: Matrix10x10) -> Matrix10x10{
 fn display_carree(m: Matrix10x10) {
     let now = Instant::now();
 
-    println!("{:?}", carre(m));
+    println!("La matrice a la puissance 4 est: {:?}", carre(carre(m)));
     println!("Le temps d'execution de la fonction carre est : {}ms", now.elapsed().as_millis());
 } 
 
 fn display_det(m: Matrix10x10) {
     let now = Instant::now();
 
-    println!("{:?}", det(m).round());
+    println!("Le determinant est: {:?}", det(m).round());
     println!("Le temps d'execution de la fonction determiant est : {}ms", now.elapsed().as_millis());
 }
 
